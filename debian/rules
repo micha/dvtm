@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+
+%:                                                                                                                                              
+	dh $@
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=debian/dvtm PREFIX=/usr
+	mv debian/dvtm/usr/bin/dvtm-status \
+		debian/dvtm/usr/share/doc/dvtm/examples

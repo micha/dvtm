@@ -1,0 +1,84 @@
+dvtm (0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Switch to dpkg-source 3.0 (quilt) format
+  * Bump Standards-Version to 3.9.1
+  * debian/control:
+    - Update Build-Depends debhelper (>= 7.0.50~)
+    - Add Depends on ${misc:Depends} 
+  * Update debian/rules with new dh format
+
+ -- Xavier Oswald <xoswald@debian.org>  Mon, 18 Oct 2010 15:17:42 +0200
+
+dvtm (0.5.2-2) unstable; urgency=low
+
+  * Recommends: ncurses-term. Fixes cases where dvtm detects that the terminal
+    supports 256 colors and tries to use TERM=rxvt-256color (Closes: #543390)
+  * Bump Standards-Version to 3.8.3
+
+ -- Albin Tonnerre <albin.tonnerre@gmail.com>  Mon, 24 Aug 2009 21:25:37 +0200
+
+dvtm (0.5.2-1) unstable; urgency=low
+
+  * New upstream release (Closes: #536151)
+  * Update Standards-Version to 3.8.2, no change required
+
+ -- Albin Tonnerre <albin.tonnerre@gmail.com>  Wed, 22 Jul 2009 22:42:41 +0200
+
+dvtm (0.5.1-2) unstable; urgency=low
+
+  * debian/control:
+    - Remove uneeded DM flag
+    - Update Build-Depends debhelper to 7
+    - Bump Standards-Version to 3.8.1
+    - Change my mail address
+  * Update debian/compat to 7
+  * Fix lintian warning:
+    - W: dvtm source: dh-clean-k-is-deprecated
+    - I: dvtm source: quilt-patch-missing-description
+      cflags_and_strip_fixes.diff
+
+ -- Xavier Oswald <xoswald@debian.org>  Wed, 29 Apr 2009 00:27:18 +0200
+
+dvtm (0.5.1-1) unstable; urgency=low
+  
+  * New upstream release
+
+  [Albin Tonnerre]
+  * refresh debian/patches/cflags_and_strip_fixes.diff
+    + Add -DCONFIG_CMDFIFO to enable the fifo command interface
+  * debian/rules: use /usr/share/quilt/quilt.make instead of our own rules
+
+ -- Xavier Oswald <x.oswald@free.fr>  Tue, 17 Feb 2009 21:55:25 +0100
+
+dvtm (0.5-1) unstable; urgency=low
+
+  [Albin Tonnerre]
+  * New upstream release (Closes: #506155, #512544)
+  * Update Standards-Version to 3.8.0
+  * debian/copyright:
+    - Adjust year numbers to 2009 for dvtm and debian/
+    - [lintian] fix I: copyright-with-old-dh-make-debian-copyright
+
+  [Xavier Oswald]
+  * debian/control: change XS-Dm-Upload-Allowed to Dm-Upload-Allowed
+
+ -- Xavier Oswald <x.oswald@free.fr>  Tue, 27 Jan 2009 00:49:54 +0100
+
+dvtm (0.4.1-1) unstable; urgency=low
+  [Albin Tonnerre]
+  * New Upstream Version (Closes: #482036)
+  * debian/patches/cflags_and_strip_fixes.diff:
+    - Explicitely define LDFLAGS = , not +=, as this leads to have both
+      -lncurses and -lncursesw appended when you call 'make unicode'
+
+ -- Xavier Oswald <x.oswald@free.fr>  Sun, 25 May 2008 12:55:52 +0200
+
+dvtm (0.4-1) unstable; urgency=low
+
+  * Initial release (Closes: #456599)
+  * debian/patches/cflags_and_strip_fixes.diff:
+    - Allow passing custom CFLAGS (eg when DEB_BUILD_OPTIONS=noopt)
+    - Don't strip the binary in Makefile, let dh_strip handle it
+
+ -- Albin Tonnerre <albin.tonnerre@gmail.com>  Tue, 26 Feb 2008 19:03:36 +0100

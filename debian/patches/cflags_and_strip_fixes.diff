@@ -1,0 +1,42 @@
+# Patch from Albin Tonnerre <albin.tonnerre@gmail.com>
+# Explicitely define LDFLAGS = , not +=, as this leads to have both
+# -lncurses and -lncursesw appended when you call 'make unicode'
+Index: dvtm-0.5.1/Makefile
+===================================================================
+--- dvtm-0.5.1.orig/Makefile	2009-02-17 21:42:13.000000000 +0100
++++ dvtm-0.5.1/Makefile	2009-02-17 21:52:20.000000000 +0100
+@@ -40,8 +40,8 @@
+ 	@rm -rf dvtm-${VERSION}
+ 
+ install: dvtm
+-	@echo stripping executable
+-	@strip -s dvtm
++#	@echo stripping executable
++#	@strip -s dvtm
+ 	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+ 	@mkdir -p ${DESTDIR}${PREFIX}/bin
+ 	@cp -f dvtm ${DESTDIR}${PREFIX}/bin
+Index: dvtm-0.5.1/config.mk
+===================================================================
+--- dvtm-0.5.1.orig/config.mk	2009-02-17 21:42:13.000000000 +0100
++++ dvtm-0.5.1/config.mk	2009-02-17 21:52:11.000000000 +0100
+@@ -6,16 +6,16 @@
+ PREFIX = /usr/local
+ MANPREFIX = ${PREFIX}/share/man
+ 
+-INCS = -I. -I/usr/include -I/usr/local/include 
++INCS = -I. -I/usr/include/ncursesw -I/usr/local/include/ncursesw
+ LIBS = -lc -lutil -lncursesw
+ #LIBS = -lc -lutil -lncurses
+ 
+-CFLAGS += -std=c99 -Os ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
++CFLAGS += -std=c99 ${BUILD_OPTS} ${INCS} -DVERSION=\"${VERSION}\" -DNDEBUG
+ LDFLAGS += -L/usr/lib -L/usr/local/lib ${LIBS}
+ 
+ # Mouse handling
+ CFLAGS += -DCONFIG_MOUSE
+-#CFLAGS += -DCONFIG_CMDFIFO
++CFLAGS += -DCONFIG_CMDFIFO
+ CFLAGS += -DCONFIG_STATUSBAR
+ 
+ DEBUG_CFLAGS = ${CFLAGS} -UNDEBUG -O0 -g -ggdb -Wall

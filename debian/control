@@ -1,0 +1,17 @@
+Source: dvtm
+Section: utils
+Priority: extra
+Maintainer: Albin Tonnerre <albin.tonnerre@gmail.com>
+Uploaders: Xavier Oswald <xoswald@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), libncursesw5-dev
+Standards-Version: 3.9.1
+Homepage: http://www.brain-dump.org/projects/dvtm
+
+Package: dvtm
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: ncurses-term
+Description: Tiling window management for the console
+ dvtm (dynamic virtual terminal manager) brings dwm and it's concept of tiling
+ window management to the console. As a console window manager it tries to make
+ it easy to work with multiple console based programs.
