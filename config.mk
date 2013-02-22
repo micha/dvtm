@@ -3,7 +3,7 @@ VERSION = 0.6
 
 # Customize below to fit your system
 
-PREFIX = /usr/local
+PREFIX = /home/micha/.local
 MANPREFIX = ${PREFIX}/share/man
 
 INCS = -I. -I/usr/include/ncursesw -I/usr/local/include/ncursesw

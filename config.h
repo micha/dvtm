@@ -57,22 +57,22 @@ Layout layouts[] = {
 
 /* you can at most specifiy MAX_ARGS (2) number of arguments */
 Key keys[] = {
-	{ MOD, CTRL('c'),       { create,         { NULL }                    } },
-	{ MOD, CTRL('x'),       { killclient,     { NULL }                    } },
-	{ MOD, CTRL('L'),       { focusnext,      { NULL }                    } },
-	{ MOD, CTRL('i'),       { swapnext,       { NULL }                    } },
-	{ MOD, CTRL('u'),       { swapprev,       { NULL }                    } },
-	{ MOD, CTRL('l'),       { focusnextnm,    { NULL }                    } },
-	{ MOD, CTRL('h'),       { focusprevnm,    { NULL }                    } },
-	{ MOD, CTRL('H'),       { focusprev,      { NULL }                    } },
-	{ MOD, CTRL('t'),       { setlayout,      { "[]=" }                   } },
-	{ MOD, CTRL('g'),       { setlayout,      { "+++" }                   } },
-	{ MOD, CTRL('b'),       { setlayout,      { "TTT" }                   } },
-	{ MOD, CTRL('m'),       { setlayout,      { "[ ]" }                   } },
-	{ MOD, CTRL(' '),       { setlayout,      { NULL }                    } },
-	{ MOD, CTRL('j'),       { setmwfact,      { "-0.05" }                 } },
-	{ MOD, CTRL('k'),       { setmwfact,      { "+0.05" }                 } },
-	{ MOD, CTRL('.'),       { toggleminimize, { NULL }                    } },
+	{ MOD, 'c',       { create,         { NULL }                    } },
+	{ MOD, 'x',       { killclient,     { NULL }                    } },
+	{ MOD, 'L',       { focusnext,      { NULL }                    } },
+	{ MOD, 'i',       { swapnext,       { NULL }                    } },
+	{ MOD, 'u',       { swapprev,       { NULL }                    } },
+	{ MOD, 'l',       { focusnextnm,    { NULL }                    } },
+	{ MOD, 'h',       { focusprevnm,    { NULL }                    } },
+	{ MOD, 'H',       { focusprev,      { NULL }                    } },
+	{ MOD, 't',       { setlayout,      { "[]=" }                   } },
+	{ MOD, 'g',       { setlayout,      { "+++" }                   } },
+	{ MOD, 'b',       { setlayout,      { "TTT" }                   } },
+	{ MOD, 'm',       { setlayout,      { "[ ]" }                   } },
+	{ MOD, ' ',       { setlayout,      { NULL }                    } },
+	{ MOD, '<',       { setmwfact,      { "-0.05" }                 } },
+	{ MOD, '>',       { setmwfact,      { "+0.05" }                 } },
+	{ MOD, 'n',       { toggleminimize, { NULL }                    } },
 #ifdef CONFIG_STATUSBAR
 	{ MOD, 's',       { togglebar,      { NULL }                    } },
 #endif
@@ -95,8 +95,8 @@ Key keys[] = {
 	{ MOD, 'r',       { redraw,         { NULL }                    } },
 	{ MOD, 'X',       { lock,           { NULL }                    } },
 	{ MOD, 'B',       { togglebell,     { NULL }                    } },
-	{ MOD, KEY_PPAGE, { scrollback,     { "-1" }                    } },
-	{ MOD, KEY_NPAGE, { scrollback,     { "1"  }                    } },
+	{ MOD, 'j',       { scrollback,     { "-1" }                    } },
+	{ MOD, 'k',       { scrollback,     { "1"  }                    } },
 	{ MOD, '?',       { create,         { "man dvtm", "dvtm help" } } },
 };
 
@@ -146,5 +146,7 @@ Cmd commands[] = {
 
 /* gets executed when dvtm is started */
 Action actions[] = {
+	{ create, { NULL } },
+	{ create, { NULL } },
 	{ create, { NULL } },
 };
