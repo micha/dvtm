@@ -53,26 +53,26 @@ Layout layouts[] = {
 	{ "[ ]", fullscreen },
 };
 
-#define MOD CTRL('d')
+#define MOD CTRL('g')
 
 /* you can at most specifiy MAX_ARGS (2) number of arguments */
 Key keys[] = {
-	{ MOD, CTRL('c'),       { create,         { NULL }                    } },
-	{ MOD, CTRL('x'),       { killclient,     { NULL }                    } },
-	{ MOD, CTRL('L'),       { focusnext,      { NULL }                    } },
-	{ MOD, CTRL('i'),       { swapnext,       { NULL }                    } },
-	{ MOD, CTRL('u'),       { swapprev,       { NULL }                    } },
-	{ MOD, CTRL('l'),       { focusnextnm,    { NULL }                    } },
-	{ MOD, CTRL('h'),       { focusprevnm,    { NULL }                    } },
-	{ MOD, CTRL('H'),       { focusprev,      { NULL }                    } },
-	{ MOD, CTRL('t'),       { setlayout,      { "[]=" }                   } },
-	{ MOD, CTRL('g'),       { setlayout,      { "+++" }                   } },
-	{ MOD, CTRL('b'),       { setlayout,      { "TTT" }                   } },
-	{ MOD, CTRL('m'),       { setlayout,      { "[ ]" }                   } },
-	{ MOD, CTRL(' '),       { setlayout,      { NULL }                    } },
-	{ MOD, CTRL('j'),       { setmwfact,      { "-0.05" }                 } },
-	{ MOD, CTRL('k'),       { setmwfact,      { "+0.05" }                 } },
-	{ MOD, CTRL('.'),       { toggleminimize, { NULL }                    } },
+	{ MOD, 'c',       { create,         { NULL }                    } },
+	{ MOD, 'x',       { killclient,     { NULL }                    } },
+	{ MOD, 'j',       { focusnext,      { NULL }                    } },
+	{ MOD, 'u',       { focusnextnm,    { NULL }                    } },
+	{ MOD, 'i',       { focusprevnm,    { NULL }                    } },
+	{ MOD, 'k',       { focusprev,      { NULL }                    } },
+	{ MOD, 'U',       { swapprev,       { NULL }                    } },
+	{ MOD, 'I',       { swapnext,       { NULL }                    } },
+	{ MOD, 't',       { setlayout,      { "[]=" }                   } },
+	{ MOD, 'g',       { setlayout,      { "+++" }                   } },
+	{ MOD, 'b',       { setlayout,      { "TTT" }                   } },
+	{ MOD, 'm',       { setlayout,      { "[ ]" }                   } },
+	{ MOD, ' ',       { setlayout,      { NULL }                    } },
+	{ MOD, 'h',       { setmwfact,      { "-0.05" }                 } },
+	{ MOD, 'l',       { setmwfact,      { "+0.05" }                 } },
+	{ MOD, '.',       { toggleminimize, { NULL }                    } },
 #ifdef CONFIG_STATUSBAR
 	{ MOD, 's',       { togglebar,      { NULL }                    } },
 #endif
