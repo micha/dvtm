@@ -53,7 +53,7 @@ Layout layouts[] = {
 	{ "[ ]", fullscreen },
 };
 
-#define MOD CTRL('d')
+#define MOD CTRL('g')
 
 /* you can at most specifiy MAX_ARGS (2) number of arguments */
 Key keys[] = {
