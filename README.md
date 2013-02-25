@@ -5,10 +5,10 @@ dvtm brings dwm and it's concept of tiling window management to
 the console. See http://www.brain-dump.org/projects/dvtm for
 the latest version.
 
-**Micha's mods:** Swap adjacent windows (see *config.h* `swapprev` and
-`swapnext`).
+### Micha's Mods
 
-**Micha's config:** See the `micha` branch for Micha's *config.h* settings.
+* Swap adjacent windows (see *config.h* `swapprev` and `swapnext`).
+* See the `micha` branch for Micha's *config.h* settings.
 
 Requirements
 ------------
