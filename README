@@ -5,6 +5,9 @@ dvtm brings dwm and it's concept of tiling window management to
 the console. See http://www.brain-dump.org/projects/dvtm for
 the latest version.
 
+**Micha's mods:** Swap adjacent windows (see *config.h* `swapprev` and
+`swapnext`).
+
 Requirements
 ------------
 In order to build dvtm you will need:
